@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME|AUDIO CONVERTER</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-   
+   <style>
+     #span {
+            display: inline-block;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            color: black;
+            text-align: center;
+        }
+
+        #span.active {
+            opacity: 1;
+        }
+        .center{
+            margin: 2px auto;
+            width: 570px;
+            color: blueviolet;
+
+        }
+   </style>
 </head>
 <body>
     <nav>
@@ -21,6 +40,9 @@
         </ul>
         
     </nav>
+    <div class="center">
+        <h2>Want to Convert to audio from these files <span id="span"></span> </h2>
+    </div>
     <div class="flex margin">
         <img src="static/images/main.png" class="mainimg">
         <div>
@@ -35,6 +57,26 @@
         <a href="{{ url_for('texttoaudio') }}">Text to audio Conversion</a>
         <a href="{{ url_for('imgtoaudio') }}">Image to audio Conversion</a>
     </div>
-    
+    <script>
+        // Use an array instead of object for the list of strings
+        let a = ["#Text", "#PDF", "#Image"];
+        let span = document.getElementById('span');
+
+        // Function to add 'active' class and trigger fade-in animation
+        function fadeIn() {
+            span.classList.add('active');
+            setTimeout(() => {
+                span.classList.remove('active');
+            }, 1000); // Set the duration of the fade-in animation
+        }
+
+        
+        setInterval(() => {
+            let x = Math.floor(Math.random() * a.length);
+            span.innerText = a[x];
+            span.classList.add('active');
+            //fadeIn();
+        }, 1000);
+        </script>
 </body>
 </html>
