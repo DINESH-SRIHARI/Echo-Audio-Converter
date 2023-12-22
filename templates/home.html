@@ -18,19 +18,14 @@
         #span.active {
             opacity: 1;
         }
-        .center{
-            margin: 2px auto;
-            width: 570px;
-            color: blueviolet;
-
-        }
+        
    </style>
 </head>
 <body>
     <nav>
         <ul type="none">
             <li class="heading">EchoVerse</li>
-            <div class="flex">
+            <div class="flex lnks">
                 <a href="{{ url_for('imgtoaudio') }}"><li>Image to audio</li></a>
                 <a href="{{ url_for('pdftoaudio') }}"><li>PDF to audio</li></a>
                 <a href="{{ url_for('texttoaudio') }}"><li>Text to audio</li></a>
@@ -40,7 +35,7 @@
         </ul>
         
     </nav>
-    <div class="center">
+    <div class="center cgcc">
         <h2>Want to Convert to audio from these files <span id="span"></span> </h2>
     </div>
     <div class="flex margin">
