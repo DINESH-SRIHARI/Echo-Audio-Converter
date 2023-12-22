@@ -18,19 +18,14 @@
         #span.active {
             opacity: 1;
         }
-        .center{
-            margin: 2px auto;
-            width: 570px;
-            color: blueviolet;
-
-        }
+       
    </style>
 </head>
 <body>
     <nav>
         <ul type="none">
             <li class="heading">EchoVerse</li>
-            <div class="flex">
+            <div class="flex lnks">
                 <a href="{{ url_for('imgtoaudio') }}"><li>Image to audio</li></a>
                 <a href="{{ url_for('pdftoaudio') }}"><li>PDF to audio</li></a>
                 <a href="{{ url_for('texttoaudio') }}"><li>Text to audio</li></a>
@@ -58,16 +53,16 @@
         <a href="{{ url_for('imgtoaudio') }}">Image to audio Conversion</a>
     </div>
     <script>
-        // Use an array instead of object for the list of strings
+       
         let a = ["#Text", "#PDF", "#Image"];
         let span = document.getElementById('span');
 
-        // Function to add 'active' class and trigger fade-in animation
+        
         function fadeIn() {
             span.classList.add('active');
             setTimeout(() => {
                 span.classList.remove('active');
-            }, 1000); // Set the duration of the fade-in animation
+            }, 1000);
         }
 
         
@@ -75,7 +70,7 @@
             let x = Math.floor(Math.random() * a.length);
             span.innerText = a[x];
             span.classList.add('active');
-            //fadeIn();
+           
         }, 1000);
         </script>
 </body>
