@@ -18,7 +18,11 @@
         #span.active {
             opacity: 1;
         }
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> cc4b6cfaa9bcb5e9c20211edae52fd2080ff546f
    </style>
 </head>
 <body>
@@ -53,16 +57,16 @@
         <a href="{{ url_for('imgtoaudio') }}">Image to audio Conversion</a>
     </div>
     <script>
-        // Use an array instead of object for the list of strings
+       
         let a = ["#Text", "#PDF", "#Image"];
         let span = document.getElementById('span');
 
-        // Function to add 'active' class and trigger fade-in animation
+        
         function fadeIn() {
             span.classList.add('active');
             setTimeout(() => {
                 span.classList.remove('active');
-            }, 1000); // Set the duration of the fade-in animation
+            }, 1000);
         }
 
         
@@ -70,7 +74,7 @@
             let x = Math.floor(Math.random() * a.length);
             span.innerText = a[x];
             span.classList.add('active');
-            //fadeIn();
+           
         }, 1000);
         </script>
 </body>
