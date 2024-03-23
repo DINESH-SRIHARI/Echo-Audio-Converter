@@ -69,7 +69,7 @@ def ptoa():
             text = ''
             for page_number in range(start, end):
                 page = pdf_reader.pages[page_number]
-                text += page.extract_text()
+                text += page.extract_text()git 
 
         return text
     pdf_path = 'static/images/uploaded_pdf.pdf'
